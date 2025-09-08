@@ -11,7 +11,7 @@ import React, { useEffect, useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 
 function Model(props) {
-  const { nodes, materials } = useGLTF("/iphone15-official-clone/models/scene.glb");
+  const { nodes, materials } = useGLTF("/models/scene.glb");
 
   const texture = useTexture(props.item.img);
 
@@ -30,7 +30,7 @@ function Model(props) {
         material[1].needsUpdate = true;
       });
     }, [materials, props.item]);
-  
+
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -258,4 +258,4 @@ function Model(props) {
 
 export default Model;
 
-useGLTF.preload("/iphone15-official-clone/models/scene.glb");
+useGLTF.preload("/models/scene.glb");
